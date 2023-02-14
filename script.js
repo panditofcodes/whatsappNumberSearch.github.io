@@ -1,9 +1,14 @@
 const chat = document.querySelector("#chat")
+const number = document.querySelector("#number")
 const getNumber = ()=>{
-    const number = document.querySelector("#number")
     const num = number.value
-    const webLink = "https://wa.me/+91" + num
-    window.location.href = webLink
+    if (num.length==10) {
+        const webLink = "https://wa.me/+91" + num
+        window.location.href = webLink
+    } else {
+        alert("Invalid Number")
+    }
+    
 
 }
 chat.addEventListener("click",function(){
