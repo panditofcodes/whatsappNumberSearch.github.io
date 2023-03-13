@@ -1,5 +1,11 @@
 const chat = document.querySelector("#chat")
-const number = document.querySelector("#number")
+const number = document.getElementById("number")
+number.addEventListener('keydown',(e)=>{
+    if(e.keyCode===13){
+        e.preventDefault()
+        getNumber()
+    }
+})
 const getNumber = ()=>{
     const num = number.value
     if (num.length==10) {
@@ -7,6 +13,7 @@ const getNumber = ()=>{
         window.location.href = webLink
     } else {
         alert("Invalid Number")
+        number.value=''
     }
     
 
